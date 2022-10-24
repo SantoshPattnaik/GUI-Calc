@@ -127,7 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controls.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Window procedure.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Controls.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="Window procedure.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
