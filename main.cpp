@@ -1,7 +1,7 @@
 #include"Window procedure.h"
 #include<windows.h>
 
-int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE, LPSTR args, int nCmdShow) {
+INT WINAPI WinMain(_In_ HINSTANCE hinstance,_In_opt_ HINSTANCE,_In_ LPSTR args,_In_ int nCmdShow) {
 	WNDCLASSW wc{};
 	wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
 	wc.lpszClassName = L"Window Class";
