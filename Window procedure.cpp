@@ -37,54 +37,6 @@ LRESULT CALLBACK WindowProcedure(HWND handle, UINT msg, WPARAM wParam, LPARAM lP
 					wcscat_s(operand1, 100, temp1);
 					SetWindowTextW(input1, operand1);
 				}
-
-				/*if (msg == SUM) {
-					result = _wtoi(operand1) + _wtoi(operand2);
-				}
-				else if (msg == DIFF) {
-					result = _wtoi(operand1) - _wtoi(operand2);
-				}
-				else if (msg == MULT) {
-					result = _wtoi(operand1) * _wtoi(operand2);
-				}
-				else if (msg == QUOTIENT) {
-					result = _wtoi(operand1) / _wtoi(operand2);
-				}*/
-
-				//wsprintf(buffer, L"%d", result);
-
-				//SetWindowTextW(textView, buffer);
-				/*case DISPLAY:
-					GetWindowTextW(input1, operand1, 100);
-					GetWindowTextW(input2, operand2, 100);
-
-					result = _wtoi(operand1) - _wtoi(operand2);
-
-					wsprintf(buffer, L"%d", result);
-
-					SetWindowTextW(textView, buffer);
-					break;
-				case MULT:
-					GetWindowTextW(input1, operand1, 100);
-					GetWindowTextW(input2, operand2, 100);
-
-					result = _wtoi(operand1) * _wtoi(operand2);
-
-					wsprintf(buffer, L"%d", result);
-
-					SetWindowTextW(textView, buffer);
-					break;
-				case QUOTIENT:
-					GetWindowTextW(input1, operand1, 100);
-					GetWindowTextW(input2, operand2, 100);
-
-					result = _wtoi(operand1) / _wtoi(operand2);
-
-					wsprintf(buffer, L"%d", result);
-
-					SetWindowTextW(textView, buffer);
-					break;*/
-
 			}
 			if (wParam == SUM || wParam == DIFF || wParam == MULT || wParam == QUOTIENT) {
 				if (wParam == SUM) {
@@ -135,7 +87,9 @@ LRESULT CALLBACK WindowProcedure(HWND handle, UINT msg, WPARAM wParam, LPARAM lP
 				}
 			}
 			//calculate the values using the operator
-			calculate(handle);
+			if (wParam == DISPLAY) {
+				calculate(handle);
+			}
 			break;
 	case WM_CREATE:
 		addControls(handle);
