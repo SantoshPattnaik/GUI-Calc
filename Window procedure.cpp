@@ -80,7 +80,6 @@ LRESULT CALLBACK WindowProcedure(HWND handle, UINT msg, WPARAM wParam, LPARAM lP
 					SetWindowTextW(input2, buffer);
 				}
 				else {
-					//GetWindowTextW(input1, operand1, 100);
 					wsprintf(temp2, L"%d", (int)wParam);
 					wcscat_s(operand2, 100, temp2);
 					SetWindowTextW(input2, operand2);
