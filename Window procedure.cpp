@@ -53,7 +53,8 @@ LRESULT CALLBACK WindowProcedure(HWND handle, UINT msg, WPARAM wParam, LPARAM lP
 				SetWindowTextW(op_symb, symbol);
 			}
 		}
-		else if (wParam == SUM || wParam == DIFF || wParam == MULT || wParam == QUOTIENT) {
+		else {
+			if (wParam == SUM || wParam == DIFF || wParam == MULT || wParam == QUOTIENT) {
 				//resetting symbol variable
 				std::fill(std::begin(symbol), std::end(symbol), 0);
 
@@ -83,16 +84,9 @@ LRESULT CALLBACK WindowProcedure(HWND handle, UINT msg, WPARAM wParam, LPARAM lP
 					SetWindowTextW(input2, operand2);
 				}
 			}
+			//calculate the values using the operator
 			if (wParam == DISPLAY) {
 				calculate(handle);
-			}
-			if (wParam == TESTING) {
-				WCHAR testBuffer[100]{};
-				WCHAR value[100]{};
-				GetWindowTextW(textView, testBuffer,100);
-				wcscat_s(value, testBuffer);
-				wcscat_s(value, L"santosh\r\n");
-				SetWindowTextW(textView, value);
 			}
 			break;
 	case WM_CREATE:
@@ -105,3 +99,4 @@ LRESULT CALLBACK WindowProcedure(HWND handle, UINT msg, WPARAM wParam, LPARAM lP
 		return DefWindowProcW(handle, msg, wParam, lParam);
 		}
 	}
+}
