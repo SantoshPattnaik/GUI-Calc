@@ -4,8 +4,10 @@
 /// This function contains all the controls as child windows which are used in the main window
 /// </summary>
 /// <param name="handle"></param>
+
 void addControls(HWND handle) {
-	textView = CreateWindowW(L"Static", L"", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_CENTER, 100, 50, 1000, 100, handle, NULL, NULL, NULL);
+	textView = CreateWindowW(L"Static", L"", WS_CHILD | WS_VISIBLE | WS_BORDER, 100, 50, 150, 100, handle, NULL, NULL, NULL);
+
 	input1 = CreateWindowW(L"Static", L"", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_CENTER, 100, 200, 90, 100, handle, NULL, NULL, NULL);
 	op_symb = CreateWindowW(L"Static", L"", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_CENTER, 280, 200, 80, 100, handle, NULL, NULL, NULL);
 	input2 = CreateWindowW(L"Static", L"", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_CENTER, 500, 200, 90, 100, handle, NULL, NULL, NULL);
@@ -28,4 +30,6 @@ void addControls(HWND handle) {
 	btn8 = CreateWindowW(L"Button", L"8", WS_VISIBLE | WS_CHILD, 730, 320, 30, 30, handle, (HMENU)8, NULL, NULL);
 	btn9 = CreateWindowW(L"Button", L"9", WS_VISIBLE | WS_CHILD, 770, 320, 30, 30, handle, (HMENU)9, NULL, NULL);
 	btn0 = CreateWindowW(L"Button", L"0", WS_VISIBLE | WS_CHILD, 730, 360, 30, 30, handle, (HMENU)0, NULL, NULL);
+
+	testing = CreateWindowW(L"Button", L"0", WS_VISIBLE | WS_CHILD, 730, 460, 30, 30, handle, (HMENU)TESTING, NULL, NULL);
 }
